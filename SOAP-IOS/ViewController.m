@@ -17,9 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        
 }
-
 
 -(void)WeatherTest:(NSString *)cityname
 {
@@ -38,12 +36,12 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)btnsearch:(id)sender {
+- (IBAction)btnsearch:(id)sender
+{
     NSString *cityname=[self.cityname text];
     [self WeatherTest:cityname];
-    
 }
+
 @end

@@ -12,8 +12,6 @@
 #import "DDXML.h"
 @implementation ServiceHelper
 
-
-
 -(id)initWithRequest:(NSString *)filename Method:(NSString *)method ParasDic:(NSDictionary *)paras
 {
     self = [super init];
@@ -26,11 +24,11 @@
     NSURL *baseURL=[[NSURL alloc]initWithString:result2.SoapUrl];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:baseURL];
     [request setHTTPBody:[result2.Soap dataUsingEncoding:NSUTF8StringEncoding]];
-    
+
     [request addValue:result2.SoapAction forHTTPHeaderField:@"SOAPAction"];
     [request addValue:@"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPMethod:@"POST"];
-    
+
     self.request=request;
     return self;
 }
