@@ -11,6 +11,8 @@
 @interface ViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UITextField *cityname;
 - (IBAction)btnsearch:(id)sender;
+- (IBAction)btnSearchAsync:(id)sender;
+- (IBAction)clearresult:(id)sender;
 @property (strong, nonatomic) IBOutlet UITextView *result;
 
 @end

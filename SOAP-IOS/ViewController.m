@@ -7,9 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "ServiceHelper.h"
 #import "DDXMLElement+WSDL.h"
 #import "SoapUtility.h"
+#import "SoapService.h"
 @interface ViewController ()
 
 @end
@@ -20,28 +20,33 @@
 {
     [super viewDidLoad];
     
-//    DDXMLElement *data=[DDXMLElement LoadWSDL:@"WeatherWebService"];
-//    NSArray *params= [data GetMethodParamsByMethodName:@"getSupportCity"];
-//    NSString *soapAction= [data GetSoapActionByMethodName:@"getSupportCity" SoapType:SOAP];
-//    NSString *targetNamespace=[data TargetNamespace];
-    //SoapUtility *utility=[[SoapUtility alloc] initFromFile:@"WeatherWebService"];
-    
-    //NSString *requestxml=[utility BuildSoapwithMethodName:@"getSupportCity" withParas:@{@"byProvinceName": @"上海"}];
-    
 }
 
--(void)WeatherTest:(NSString *)cityname
+-(void)WeatherTest:(NSString *)cityname isSync:(BOOL)isSync
 {
-    NSDictionary *dic=@{@"theCityName": @"上海"};
-    ServiceHelper *helper=[[ServiceHelper alloc] initWithRequest:@"WeatherWebService" Method:@"getWeatherbyCityName" ParasDic:dic];
-    [helper setCompletionBlockWithSuccess:^(NSString *response) {
-        [self.result setText:response];
-        NSLog(@"%@",response);
-    } falure:^(NSError *response) {
-        [self.result setText:response.localizedDescription];
-        NSLog(@"%@",response);
-    }];
-    [helper invoke];
+    NSDictionary *dic=@{@"theCityName": cityname};
+    NSString *methodName=@"getWeatherbyCityName";
+    
+    SoapUtility *soaputility=[[SoapUtility alloc] initFromFile:@"WeatherWebService"];
+    NSString *postData=[soaputility BuildSoapwithMethodName:@"getWeatherbyCityName" withParas:dic];
+    
+    SoapService *soaprequest=[[SoapService alloc] init];
+    soaprequest.PostUrl=@"http://www.webxml.com.cn/WebServices/WeatherWebService.asmx";
+    soaprequest.SoapAction=[soaputility GetSoapActionByMethodName:methodName SoapType:SOAP];
+    
+    if (isSync) {
+        //同步方法
+        ResponseData *result= [soaprequest PostSync:postData];
+        [self.result setText:result.Content];
+    }
+    else{
+        //异步请求
+        [soaprequest PostAsync:postData Success:^(NSString *response) {
+            [self.result setText:response];
+        } falure:^(NSError *response) {
+            [self.result setText:response.description];
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,7 +57,17 @@
 - (IBAction)btnsearch:(id)sender
 {
     NSString *cityname=[self.cityname text];
-    [self WeatherTest:cityname];
+    [self WeatherTest:cityname isSync:YES];
 }
+
+- (IBAction)btnSearchAsync:(id)sender {
+    NSString *cityname=[self.cityname text];
+    [self WeatherTest:cityname isSync:NO];
+}
+
+- (IBAction)clearresult:(id)sender {
+    [self.result setText:@""];
+}
+
 
 @end
