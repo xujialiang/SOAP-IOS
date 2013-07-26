@@ -7,9 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "DDXMLElement+WSDL.h"
-#import "SoapUtility.h"
-#import "SoapService.h"
+#import "Soap.h"
+
 @interface ViewController ()
 
 @end

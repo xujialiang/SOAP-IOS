@@ -46,6 +46,7 @@
 		4F14D99517A1049D002C0605 /* DDXMLElement+WSDL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDXMLElement+WSDL.m"; sourceTree = "<group>"; };
 		4F26C56917A2B99200800645 /* SoapService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapService.h; sourceTree = "<group>"; };
 		4F26C56A17A2B99200800645 /* SoapService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapService.m; sourceTree = "<group>"; };
+		4F565BE517A2CF1900CE7999 /* Soap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Soap.h; sourceTree = "<group>"; };
 		4F6585AE171FEDE000BB4B9F /* SOAP-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SOAP-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F6585B1171FEDE000BB4B9F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4F6585B3171FEDE000BB4B9F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -126,6 +127,7 @@
 				4F822E7317A284D500393989 /* SoapUtility.m */,
 				4F26C56917A2B99200800645 /* SoapService.h */,
 				4F26C56A17A2B99200800645 /* SoapService.m */,
+				4F565BE517A2CF1900CE7999 /* Soap.h */,
 			);
 			name = SOAPUtility;
 			sourceTree = "<group>";
@@ -137,13 +139,6 @@
 				4F14D99517A1049D002C0605 /* DDXMLElement+WSDL.m */,
 			);
 			name = category;
-			sourceTree = "<group>";
-		};
-		4F26C56817A2B8FE00800645 /* ServiceHelper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = ServiceHelper;
 			sourceTree = "<group>";
 		};
 		4F6585A5171FEDE000BB4B9F = {
@@ -179,10 +174,9 @@
 		4F6585B7171FEDE000BB4B9F /* SOAP-IOS */ = {
 			isa = PBXGroup;
 			children = (
-				4F26C56817A2B8FE00800645 /* ServiceHelper */,
+				4F6585D6171FEEB800BB4B9F /* WSDL */,
 				4F14D99117A1040B002C0605 /* SOAPUtility */,
 				4F6585D5171FEE1A00BB4B9F /* Extend */,
-				4F6585D4171FEE0000BB4B9F /* SOAPHelper */,
 				4F6585C0171FEDE000BB4B9F /* AppDelegate.h */,
 				4F6585C1171FEDE000BB4B9F /* AppDelegate.m */,
 				4F6585C9171FEDE000BB4B9F /* ViewController.h */,
@@ -205,14 +199,6 @@
 				4F6585C7171FEDE000BB4B9F /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4F6585D4171FEE0000BB4B9F /* SOAPHelper */ = {
-			isa = PBXGroup;
-			children = (
-				4F6585D6171FEEB800BB4B9F /* WSDL */,
-			);
-			name = SOAPHelper;
 			sourceTree = "<group>";
 		};
 		4F6585D5171FEE1A00BB4B9F /* Extend */ = {
