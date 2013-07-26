@@ -12,28 +12,28 @@ IOS SOAP
 
 ####3.获取soap信封
 
-  SoapUtility *soaputility=[[SoapUtility alloc] initFromFile:@"WeatherWebService"];这里的WeatherWebService是步骤2中添加的wsdl文件。不包含扩展名。
+    SoapUtility *soaputility=[[SoapUtility alloc] initFromFile:@"WeatherWebService"];这里的WeatherWebService是步骤2中添加的wsdl文件。不包含扩展名。
 
-  NSString *SoapXML=[soaputility BuildSoapwithMethodName:@"getWeatherbyCityName" withParas:@{@"theCityName": @"上海"}];
+    NSString *SoapXML=[soaputility BuildSoapwithMethodName:@"getWeatherbyCityName" withParas:@{@"theCityName": @"上海"}];
 
 ####4.获取soapAction
 
-  NSString *soapAction=[soaputility GetSoapActionByMethodName:method SoapType:SOAP];
+    NSString *soapAction=[soaputility GetSoapActionByMethodName:method SoapType:SOAP];
 
 ####5.得到了soap信封和SoapAction，就可以用使用http post 来提交了。
   
-  SoapService *soaprequest=[[SoapService alloc] init];
+    SoapService *soaprequest=[[SoapService alloc] init];
   
-  soaprequest.PostUrl=@"http://www.webxml.com.cn/WebServices/WeatherWebService.asmx";
+    soaprequest.PostUrl=@"http://www.webxml.com.cn/WebServices/WeatherWebService.asmx";
   
-  soaprequest.SoapAction=[soaputility GetSoapActionByMethodName:methodName SoapType:SOAP];
+    soaprequest.SoapAction=[soaputility GetSoapActionByMethodName:methodName SoapType:SOAP];
   
   
   同步方式
-  ResponseData *result= [soaprequest PostSync:postData];
+    ResponseData *result= [soaprequest PostSync:postData];
   
   异步方式
-  [soaprequest PostAsync:postData Success:^(NSString *response) {
+   [soaprequest PostAsync:postData Success:^(NSString *response) {
   
             [self.result setText:response];
             
