@@ -30,9 +30,11 @@ IOS SOAP
   
   
   同步方式
+  
     ResponseData *result= [soaprequest PostSync:postData];
   
   异步方式
+  
    [soaprequest PostAsync:postData Success:^(NSString *response) {
   
             [self.result setText:response];
