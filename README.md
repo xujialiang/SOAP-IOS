@@ -35,7 +35,7 @@ IOS SOAP
   
   异步方式
   
-   [soaprequest PostAsync:postData Success:^(NSString *response) {
+    [soaprequest PostAsync:postData Success:^(NSString *response) {
   
             [self.result setText:response];
             
