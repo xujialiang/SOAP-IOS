@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "ServiceHelper.h"
+#import "DDXMLElement+WSDL.h"
+#import "SoapUtility.h"
 @interface ViewController ()
 
 @end
@@ -17,6 +19,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+//    DDXMLElement *data=[DDXMLElement LoadWSDL:@"WeatherWebService"];
+//    NSArray *params= [data GetMethodParamsByMethodName:@"getSupportCity"];
+//    NSString *soapAction= [data GetSoapActionByMethodName:@"getSupportCity" SoapType:SOAP];
+//    NSString *targetNamespace=[data TargetNamespace];
+    //SoapUtility *utility=[[SoapUtility alloc] initFromFile:@"WeatherWebService"];
+    
+    //NSString *requestxml=[utility BuildSoapwithMethodName:@"getSupportCity" withParas:@{@"byProvinceName": @"上海"}];
+    
 }
 
 -(void)WeatherTest:(NSString *)cityname

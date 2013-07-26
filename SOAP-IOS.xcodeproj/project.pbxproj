@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F14D99617A1049D002C0605 /* DDXMLElement+WSDL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F14D99517A1049D002C0605 /* DDXMLElement+WSDL.m */; };
 		4F1885C617224920004F656A /* ServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1885C517224920004F656A /* ServiceHelper.m */; };
 		4F6585B2171FEDE000BB4B9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F6585B1171FEDE000BB4B9F /* UIKit.framework */; };
 		4F6585B4171FEDE000BB4B9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F6585B3171FEDE000BB4B9F /* Foundation.framework */; };
@@ -24,7 +25,7 @@
 		4F6585ED171FEF9200BB4B9F /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6585E4171FEF9100BB4B9F /* DDXMLDocument.m */; };
 		4F6585EE171FEF9200BB4B9F /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6585E6171FEF9200BB4B9F /* DDXMLElement.m */; };
 		4F6585EF171FEF9200BB4B9F /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6585E8171FEF9200BB4B9F /* DDXMLNode.m */; };
-		4F6585F2171FF03300BB4B9F /* WSDL2SOAP.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6585F1171FF03300BB4B9F /* WSDL2SOAP.m */; };
+		4F822E7417A284D500393989 /* SoapUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F822E7317A284D500393989 /* SoapUtility.m */; };
 		4FD7EEFC1720C8550041B2BE /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD7EEFB1720C8550041B2BE /* libxml2.2.dylib */; };
 		4FD7EF00172137470041B2BE /* WeatherWebService.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4FD7EEFF172137470041B2BE /* WeatherWebService.xml */; };
 		4FD7EF151721391A0041B2BE /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD7EF031721391A0041B2BE /* AFHTTPClient.m */; };
@@ -41,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F14D99417A1049D002C0605 /* DDXMLElement+WSDL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDXMLElement+WSDL.h"; sourceTree = "<group>"; };
+		4F14D99517A1049D002C0605 /* DDXMLElement+WSDL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DDXMLElement+WSDL.m"; sourceTree = "<group>"; };
 		4F1885C417224920004F656A /* ServiceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceHelper.h; sourceTree = "<group>"; };
 		4F1885C517224920004F656A /* ServiceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceHelper.m; sourceTree = "<group>"; };
 		4F6585AE171FEDE000BB4B9F /* SOAP-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SOAP-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,8 +74,8 @@
 		4F6585E7171FEF9200BB4B9F /* DDXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLNode.h; sourceTree = "<group>"; };
 		4F6585E8171FEF9200BB4B9F /* DDXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLNode.m; sourceTree = "<group>"; };
 		4F6585EA171FEF9200BB4B9F /* DDXMLPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLPrivate.h; sourceTree = "<group>"; };
-		4F6585F0171FF03300BB4B9F /* WSDL2SOAP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSDL2SOAP.h; path = SOAPHelper/WSDL2SOAP.h; sourceTree = "<group>"; };
-		4F6585F1171FF03300BB4B9F /* WSDL2SOAP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSDL2SOAP.m; path = SOAPHelper/WSDL2SOAP.m; sourceTree = "<group>"; };
+		4F822E7217A284D500393989 /* SoapUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapUtility.h; sourceTree = "<group>"; };
+		4F822E7317A284D500393989 /* SoapUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapUtility.m; sourceTree = "<group>"; };
 		4FD7EEFB1720C8550041B2BE /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		4FD7EEFF172137470041B2BE /* WeatherWebService.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = WeatherWebService.xml; sourceTree = "<group>"; };
 		4FD7EF021721391A0041B2BE /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -115,6 +118,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F14D99117A1040B002C0605 /* SOAPUtility */ = {
+			isa = PBXGroup;
+			children = (
+				4F14D99317A1044E002C0605 /* category */,
+				4F822E7217A284D500393989 /* SoapUtility.h */,
+				4F822E7317A284D500393989 /* SoapUtility.m */,
+			);
+			name = SOAPUtility;
+			sourceTree = "<group>";
+		};
+		4F14D99317A1044E002C0605 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				4F14D99417A1049D002C0605 /* DDXMLElement+WSDL.h */,
+				4F14D99517A1049D002C0605 /* DDXMLElement+WSDL.m */,
+			);
+			name = category;
+			sourceTree = "<group>";
+		};
 		4F6585A5171FEDE000BB4B9F = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +170,7 @@
 		4F6585B7171FEDE000BB4B9F /* SOAP-IOS */ = {
 			isa = PBXGroup;
 			children = (
+				4F14D99117A1040B002C0605 /* SOAPUtility */,
 				4F6585D5171FEE1A00BB4B9F /* Extend */,
 				4F6585D4171FEE0000BB4B9F /* SOAPHelper */,
 				4F6585C0171FEDE000BB4B9F /* AppDelegate.h */,
@@ -178,8 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				4F6585D6171FEEB800BB4B9F /* WSDL */,
-				4F6585F0171FF03300BB4B9F /* WSDL2SOAP.h */,
-				4F6585F1171FF03300BB4B9F /* WSDL2SOAP.m */,
 				4F1885C417224920004F656A /* ServiceHelper.h */,
 				4F1885C517224920004F656A /* ServiceHelper.m */,
 			);
@@ -347,7 +368,6 @@
 				4F6585ED171FEF9200BB4B9F /* DDXMLDocument.m in Sources */,
 				4F6585EE171FEF9200BB4B9F /* DDXMLElement.m in Sources */,
 				4F6585EF171FEF9200BB4B9F /* DDXMLNode.m in Sources */,
-				4F6585F2171FF03300BB4B9F /* WSDL2SOAP.m in Sources */,
 				4FD7EF151721391A0041B2BE /* AFHTTPClient.m in Sources */,
 				4FD7EF161721391A0041B2BE /* AFHTTPRequestOperation.m in Sources */,
 				4FD7EF171721391A0041B2BE /* AFImageRequestOperation.m in Sources */,
@@ -358,6 +378,8 @@
 				4FD7EF1C1721391A0041B2BE /* AFXMLRequestOperation.m in Sources */,
 				4FD7EF1D1721391A0041B2BE /* UIImageView+AFNetworking.m in Sources */,
 				4F1885C617224920004F656A /* ServiceHelper.m in Sources */,
+				4F14D99617A1049D002C0605 /* DDXMLElement+WSDL.m in Sources */,
+				4F822E7417A284D500393989 /* SoapUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 //
 
 #import "ServiceHelper.h"
-#import "WSDL2SOAP.h"
+#import "SoapUtility.h"
 #import "AFNetworking.h"
 #import "DDXML.h"
 @implementation ServiceHelper
@@ -18,14 +18,15 @@
     if (!self) {
 		return nil;
     }
-    WSDL2SOAP *soapevenlop=[[WSDL2SOAP alloc] init];
-    WSDL2SOAP *result2= [soapevenlop GenerateSoap1:filename withMethod:method withParas:paras];
     
-    NSURL *baseURL=[[NSURL alloc]initWithString:result2.SoapUrl];
+    SoapUtility *soaputility=[[SoapUtility alloc] initFromFile:@"WeatherWebService"];
+    
+    NSURL *baseURL=[[NSURL alloc]initWithString:@"http://www.webxml.com.cn/WebServices/WeatherWebService.asmx"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:baseURL];
-    [request setHTTPBody:[result2.Soap dataUsingEncoding:NSUTF8StringEncoding]];
-
-    [request addValue:result2.SoapAction forHTTPHeaderField:@"SOAPAction"];
+    NSString *bodystring=[soaputility BuildSoapwithMethodName:method withParas:paras];
+    [request setHTTPBody:[bodystring dataUsingEncoding:NSUTF8StringEncoding]];
+    NSString *soapAction=[soaputility GetSoapActionByMethodName:method SoapType:SOAP];
+    [request addValue:soapAction forHTTPHeaderField:@"SOAPAction"];
     [request addValue:@"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPMethod:@"POST"];
 
