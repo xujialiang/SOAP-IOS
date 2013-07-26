@@ -23,17 +23,24 @@ IOS SOAP
 ####5.得到了soap信封和SoapAction，就可以用使用http post 来提交了。
   
   SoapService *soaprequest=[[SoapService alloc] init];
+  
   soaprequest.PostUrl=@"http://www.webxml.com.cn/WebServices/WeatherWebService.asmx";
+  
   soaprequest.SoapAction=[soaputility GetSoapActionByMethodName:methodName SoapType:SOAP];
+  
   
   同步方式
   ResponseData *result= [soaprequest PostSync:postData];
   
   异步方式
   [soaprequest PostAsync:postData Success:^(NSString *response) {
+  
             [self.result setText:response];
+            
         } falure:^(NSError *response) {
+        
             [self.result setText:response.description];
+            
         }];
 
 主页：[http://xujialiang.net](http://blog.xujialiang.net/pages/other/open_source_projects.html)
